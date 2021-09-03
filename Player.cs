@@ -22,6 +22,11 @@ namespace ShootingDice
             // Call roll for "this" object and for the "other" object
             int myRoll = Roll();
             int otherRoll = other.Roll();
+            if (other is HumanPlayer)
+            {   
+                Console.WriteLine($"What did {Name} roll?");
+                otherRoll = int.Parse(Console.ReadLine());
+            }
             if (other is OneHigherPlayer)
             {
                 otherRoll = (other as OneHigherPlayer).Roll(myRoll);

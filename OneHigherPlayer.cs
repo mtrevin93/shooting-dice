@@ -15,6 +15,10 @@ namespace ShootingDice
         {
             // Call roll for "this" object and for the "other" object
             int otherRoll = other.Roll();
+            if (other is HumanPlayer)
+            {
+                otherRoll = int.Parse(Console.ReadLine());
+            }
             int myRoll = otherRoll + 1;
 
             Flavor();
