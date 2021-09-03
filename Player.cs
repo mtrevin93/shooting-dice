@@ -12,10 +12,9 @@ namespace ShootingDice
             // Return a random number between 1 and DiceSize
             return new Random().Next(DiceSize) + 1;
         }
-
-        public virtual string Flavor()
+        public virtual void Flavor()
         {
-            return "";
+            return;
         }
 
         public virtual void Play(Player other)
@@ -27,10 +26,10 @@ namespace ShootingDice
             {
                 otherRoll = (other as OneHigherPlayer).Roll(myRoll);
             }
-            Console.WriteLine($"{Name} rolls a {myRoll}");
             Flavor();
-            Console.WriteLine($"{other.Name} rolls a {otherRoll}");
+            Console.WriteLine($"{Name} rolls a {myRoll}");
             other.Flavor();
+            Console.WriteLine($"{other.Name} rolls a {otherRoll}");
             if (myRoll > otherRoll)
             {
                 Console.WriteLine($"{Name} Wins!");
