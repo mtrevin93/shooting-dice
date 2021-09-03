@@ -31,7 +31,9 @@ namespace ShootingDice
             {
                 otherRoll = (other as OneHigherPlayer).Roll(myRoll);
             }
-            Flavor();
+            { 
+            Flavor(); 
+            }
             Console.WriteLine($"{Name} rolls a {myRoll}");
             other.Flavor();
             Console.WriteLine($"{other.Name} rolls a {otherRoll}");
