@@ -24,7 +24,7 @@ namespace ShootingDice
             int otherRoll = other.Roll();
             if (other is HumanPlayer)
             {   
-                Console.WriteLine($"What did {Name} roll?");
+                Console.WriteLine($"What did {other.Name} roll?");
                 otherRoll = int.Parse(Console.ReadLine());
             }
             if (other is OneHigherPlayer)
