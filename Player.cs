@@ -16,7 +16,10 @@ namespace ShootingDice
         {
             return;
         }
-
+        public virtual void PlayerFlipsTable()
+        {
+            return;
+        }
         public virtual void Play(Player other)
         {
             // Call roll for "this" object and for the "other" object
@@ -39,11 +42,25 @@ namespace ShootingDice
             Console.WriteLine($"{other.Name} rolls a {otherRoll}");
             if (myRoll > otherRoll)
             {
-                Console.WriteLine($"{Name} Wins!");
+                if (other is ISoreLoser)
+                {
+                    other.PlayerFlipsTable();
+                }
+                else 
+                {
+                    Console.WriteLine($"{Name} Wins!");
+                }
             }
             else if (myRoll < otherRoll)
             {
-                Console.WriteLine($"{other.Name} Wins!");
+                if (this is ISoreLoser)
+                {
+                    PlayerFlipsTable();
+                }
+                else
+                {
+                    Console.WriteLine($"{other.Name} Wins!");
+                }
             }
             else
             {
