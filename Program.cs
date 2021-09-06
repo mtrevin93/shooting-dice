@@ -14,8 +14,6 @@ namespace ShootingDice
             Player player2 = new OneHigherPlayer();
             player2.Name = "Sue";
 
-            player2.Play(player1);
-
             Player player3 = new HumanPlayer();
             player3.Name = "Wilma";
 
@@ -28,18 +26,14 @@ namespace ShootingDice
             Player player6 = new UpperHalfPlayer();
             player6.Name = "Freddy";
 
-            player5.Play(player6);
-            player6.Play(player5);
-
-            player3.Play(player4);
+            Player player7 = new SoreLoserUpperHalfPlayer();
+            player7.Name = "Chad";
 
             Player large = new LargeDicePlayer();
             large.Name = "Bigun Rollsalot";
 
-            player1.Play(large);
-
             List<Player> players = new List<Player>() {
-                player1, player2, player3, player4, player5, player6, large
+                player1, player2, player3, player4, player5, player6, player7, large
             };
 
             PlayMany(players);

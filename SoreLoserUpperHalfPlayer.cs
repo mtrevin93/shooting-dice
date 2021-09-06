@@ -1,3 +1,5 @@
+using System;
+
 namespace ShootingDice
 {
     // TODO: Complete this class
