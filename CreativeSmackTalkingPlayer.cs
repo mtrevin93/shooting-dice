@@ -14,7 +14,7 @@ namespace ShootingDice
         };
         public override void Flavor()
         {
-            Console.WriteLine($"{Name}: {Insults[new Random().Next(0, 4)]}");
+            Console.WriteLine($"{Name}: {Insults[new Random().Next(0, Insults.Count)]}");
         }
     }
 }

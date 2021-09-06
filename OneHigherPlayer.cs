@@ -27,11 +27,25 @@ namespace ShootingDice
             Console.WriteLine($"{other.Name} rolls a {otherRoll}");
             if (myRoll > otherRoll)
             {
-                Console.WriteLine($"{Name} Wins!");
+                if (other is ISoreLoser)
+                {
+                    other.PlayerFlipsTable();
+                }
+                else 
+                {
+                    Console.WriteLine($"{Name} Wins!");
+                }
             }
             else if (myRoll < otherRoll)
             {
-                Console.WriteLine($"{other.Name} Wins!");
+                if (this is ISoreLoser)
+                {
+                    PlayerFlipsTable();
+                }
+                else
+                {
+                    Console.WriteLine($"{other.Name} Wins!");
+                }
             }
             else
             {
