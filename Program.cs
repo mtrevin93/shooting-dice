@@ -16,8 +16,6 @@ namespace ShootingDice
 
             player2.Play(player1);
 
-            Console.WriteLine("-------------------");
-
             Player player3 = new HumanPlayer();
             player3.Name = "Wilma";
 
@@ -27,19 +25,21 @@ namespace ShootingDice
             Player player5 = new SmackTalkingPlayer();
             player5.Name = "Bob";
 
-            player3.Play(player4);
+            Player player6 = new UpperHalfPlayer();
+            player6.Name = "Freddy";
 
-            Console.WriteLine("-------------------");
+            player5.Play(player6);
+            player6.Play(player5);
+
+            player3.Play(player4);
 
             Player large = new LargeDicePlayer();
             large.Name = "Bigun Rollsalot";
 
             player1.Play(large);
 
-            Console.WriteLine("-------------------");
-
             List<Player> players = new List<Player>() {
-                player1, player2, player3, player4, large
+                player1, player2, player3, player4, player5, player6, large
             };
 
             PlayMany(players);
@@ -66,7 +66,6 @@ namespace ShootingDice
             // Loop over the players 2 at a time
             for (int i = 0; i < maxIndex; i += 2)
             {
-                Console.WriteLine("-------------------");
 
                 // Make adjacent players play noe another
                 Player player1 = shuffledPlayers[i];

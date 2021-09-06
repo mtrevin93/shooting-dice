@@ -52,6 +52,7 @@ namespace ShootingDice
                 // if the rolls are equal it's a tie
                 Console.WriteLine("It's a tie");
             }
+            Console.WriteLine("-------------------");
         }
     }
 }
